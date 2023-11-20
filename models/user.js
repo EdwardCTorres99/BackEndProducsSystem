@@ -1,10 +1,11 @@
 const db = require("../config/config");
-//const bcrypt = require("bcryptjs");
+const bcrypt = require("bcryptjs");
 
 const User = {};
 
 
 User.create = async (user, result) => {
+  
     const hash = await bcrypt.hash(user.password, 10);
   
     const sql = `
