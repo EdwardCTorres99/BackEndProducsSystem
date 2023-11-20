@@ -5,6 +5,9 @@ const server = http.createServer(app);
 const logger = require("morgan");
 const cors = require("cors");
 
+// Route Imports
+const usersRoutes = require("./routes/userRoutes");
+
 const port = process.env.port || 3000;
 
 // Middleware Configuration
@@ -16,6 +19,11 @@ app.use(cors());
 app.disable("x-powered-by");
 
 app.set("port", port);
+
+/**
+ * API Route Configuration
+ */
+usersRoutes(app);
 
 server.listen(3000, "0.0.0.0", function () {
     console.log(`NodeJS application started on port ${port}`);

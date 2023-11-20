@@ -1,5 +1,5 @@
 const db = require("../config/config");
-const bcrypt = require("bcryptjs");
+//const bcrypt = require("bcryptjs");
 
 const User = {};
 
