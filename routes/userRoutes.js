@@ -8,7 +8,7 @@
  */
 
 const usersController = require("../controllers/usersController");
-//const passport = require("passport");
+const passport = require("passport");
 
 /**
  * Initializes the user-related routes.
@@ -20,7 +20,7 @@ const usersController = require("../controllers/usersController");
 module.exports = (app, upload) => {
     // User creation routes
     app.post("/api/users/create", usersController.register);
-    //app.post("/api/users/createWithImage", upload.array("image", 1), usersController.registerWithImage);
+    app.post("/api/users/createWithImage", upload.array("image", 1), usersController.registerWithImage);
     
     
   };
