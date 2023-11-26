@@ -22,5 +22,6 @@ module.exports = (app, upload) => {
     app.post("/api/users/create", usersController.register);
     app.post("/api/users/createWithImage", upload.array("image", 1), usersController.registerWithImage);
     
-    
+    // User login route
+    app.post("/api/users/login", usersController.login);
   };
