@@ -22,5 +22,6 @@ module.exports = (app, upload) => {
   // Route to create a new product with image uploads
   app.post('/api/products/create',  passport.authenticate('jwt', { session: false }), upload.array('image', 3), productsController.create);
   
+  app.get('/api/products/getAll', productsController.getAll);
 
 };

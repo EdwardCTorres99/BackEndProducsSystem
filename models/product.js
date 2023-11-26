@@ -53,6 +53,20 @@ Product.create = (product, result) => {
 
 }
 
+Product.getAll = (result) => {
+    const sql = 'SELECT * FROM products';
+
+    db.query(sql, (err, res) => {
+        if (err) {
+            console.log('Error:', err);
+            result(err, null);
+        } else {
+            console.log('Productos obtenidos con éxito.');
+            result(null, res);
+        }
+    });
+}
+
 Product.update = (product, result) => {
 
     const sql = `

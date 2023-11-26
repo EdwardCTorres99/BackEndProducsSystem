@@ -88,5 +88,28 @@ module.exports = {
                 start();
             });
         }     
+    },
+
+    /* @function
+    * @async
+    * @param {Object} req - Express request object.
+    * @param {Object} res - Express response object.
+    */
+    getAll(req, res) {
+        Product.getAll((err, products) => {
+            if (err) {
+                return res.status(500).json({
+                    success: false,
+                    message: 'Error al obtener los productos',
+                    error: err
+                });
+            }
+
+            return res.status(200).json({
+                success: true,
+                message: 'Productos obtenidos con éxito',
+                data: products
+            });
+        });
     }
 }
