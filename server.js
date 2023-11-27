@@ -6,7 +6,7 @@ const logger = require("morgan");
 const cors = require("cors");
 
 // Route Imports
-const usersRoutes = require("./routes/userRoutes");
+const usersRoutes = require("./src/routes/userRoutes");
 
 const port = process.env.port || 3000;
 
